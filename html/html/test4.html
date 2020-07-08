@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #app{
+            width: 100%;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <form >
+            First name: <label>
+            <input type="text" name="FirstName">
+        </label><br>
+            Middle name: <label>
+            <input type="text" name="MiddleName">
+        </label><br>
+            Last name: <label>
+            <input type="text" name="LastName">
+        </label>
+        </form>
+        <button id="submit" type="submit">Submit</button>
+        <button id="reset" type="reset">Reset</button>
+    </div>
+
+    <script type="text/javascript">
+        var inputs = document.getElementsByTagName("input");
+        var z = 0;
+        for (var i = 0 ;i<inputs.length;i++){
+
+            if (inputs[i].type === "text"){
+                z++
+            }
+        }
+        console.log("表单内文本框的数量："+z);
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习4-12-1</title>
+</head>
+<style type="text/css">
+    .main_div{
+        margin: 20px auto;
+        text-align: center;
+    }
+</style>
+<body>
+    <div  class="main_div">
+        <div >
+            <img src="e4.jpg" class="pic" alt="">
+        </div>
+        <button onclick="photoMagnify()">放大</button>&nbsp;&nbsp;
+        <button onclick="photoShrink()">缩小</button>
+    </div>
+    <script type="text/javascript">
+        function photoMagnify(){
+            const image = document.getElementsByClassName("pic")[0];
+            image.style.height = image.height * 1.1 + 'px';
+            image.style.width = image.width * 1.1 + 'px';
+            console.log( "放大后的长度：" + image.style.height);
+            console.log( "放大后的宽度：" + image.style.width);
+        }
+        function photoShrink(){
+            const image = document.getElementsByClassName("pic")[0];
+            image.style.height = image.height / 1.1 + 'px';
+            image.style.width = image.width / 1.1 + 'px';
+            console.log( "缩小后的长度：" + image.style.height);
+            console.log( "缩小后的宽度：" + image.style.width);
+        }
+    </script>
+</body>
+</html>
+

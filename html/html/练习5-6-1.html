@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习5-6-1</title>
+</head>
+<body>
+    <div id="app">
+        <h4>
+            "请输入需要给子组件的值："
+            <label>
+                <input type="text" v-model="msg">
+            </label>
+        </h4>
+        <menu-item v-bind:title="msg"></menu-item>
+    </div>
+    <script type="text/javascript" src="vue.js"></script>
+    <script type="text/javascript">
+        Vue.component('menu-item', {
+            props: ['title'],
+            template: '<div><h4>Vue 实例中的属性值为：{{title}}</h4></div>'
+        });
+        const app = new Vue({
+            el: "#app",
+            data: {
+                msg: "123"
+            }
+        });
+    </script>
+
+</body>
+</html>

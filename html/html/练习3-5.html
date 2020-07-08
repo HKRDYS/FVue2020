@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-5</title>
+    <style>
+        #app{
+            width: 100%;
+            text-align: center;
+            line-height: 50px;
+            min-width: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div>姓名：{{msg}}</div>
+        <label>
+            姓名：<input type="text" v-model="msg"/>
+        </label>
+        <div>年龄：{{msg1}}</div>
+        <label>
+            年龄：<input type="text" v-model="msg1"/>
+        </label>
+    </div>
+    <script type="text/javascript" src = "vue.js"></script>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el : "#app",
+            data:{
+                msg:"HelloWorld",
+                msg1:"40"
+            }
+        })
+    </script>
+
+</body>
+</html>

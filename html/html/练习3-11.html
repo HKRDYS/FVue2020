@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>练习3-11</title>
+</head>
+<body>
+    <div id="app">
+            数值A: <label>
+            <input type="number"  v-model="msg" >
+        </label><br>
+            数值B: <label>
+            <input type="number"  v-model="msg1" >
+        </label><br>
+
+            <button type="button" @click="add_click">计算</button>
+            <p>结果：{{total}}</p>
+    </div>
+    <script type="text/javascript" src="vue.js"></script>
+    <script type="text/javascript">
+
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                msg: "25",
+                msg1: "46",
+                total: ""
+            },
+            methods: {
+                add_click: function () {
+                    this.total = parseInt(this.msg) + parseInt(this.msg1);
+                }
+
+
+            }
+
+        });
+    </script>
+</body>
+</html>

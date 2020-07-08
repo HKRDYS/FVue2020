@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.all{
+				display:flex;
+				justify-content:center;
+				align-items:center;
+				flex-direction:column;
+				width:25vw;
+			}
+			.out{
+				width:100%;
+				border:3px solid black;
+			}
+			.in{
+				/* width:100%; */
+				background-color:red;
+			}
+			.menu{
+				display:flex;
+				flex-direction:row;
+				justify-content:space-around;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='all'>
+			<div class='head'>
+				<img  :src="src">
+			</div>
+			<div>
+				<div class='out'>
+					<div class='in' :style="{width:width + '%' }">
+						&nbsp;
+					</div>
+				</div>
+				<div class='menu'>
+					<button @click='handle'>
+						敲瓶子
+					</button>
+					<button @click='newStart'>
+						重新开始
+					</button>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src='vue.js'></script>
+	<script>
+		let vm = new Vue({
+			el:".all",
+			data:{
+				width:100,
+				src:"001.png",
+			},
+			methods:{
+				handle:function(){
+					this.width -= 10;
+					if(this.width <= 0){
+						this.src = '002.png'
+					}
+				},
+				newStart:function(){
+					this.src='001.png';
+					this.width=100;
+				}
+			}
+		})
+	</script>
+</html>

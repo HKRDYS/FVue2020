@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习5-12-1</title>
+</head>
+<body>
+    <div id="app">
+        <submit-button></submit-button><br>
+        <submit-button>Save</submit-button>
+    </div>
+    <script type="text/javascript" src="vue.js"></script>
+    <script type="text/javascript">
+        Vue.component('submit-button',{
+           template: `
+                    <button type="submit">
+                        <slot>Submit</slot>
+                    </button>
+
+           `
+        });
+        const vm = new Vue({
+            el: "#app"
+        });
+    </script>
+</body>
+</html>

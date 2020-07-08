@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test2</title>
+</head>
+<body>
+
+
+    <div id="app">
+        <div v-clock>{{msg}}</div>
+        <div v-text="msg1"> </div>
+        <div v-html="msg2"></div>
+    </div>
+    <script src="vue.js" type="text/javascript" charset="utf-8">
+
+    </script>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el:"#app",
+            data:{
+                msg:"******hello world!******",
+                msg1:"hello world!",
+                msg2:"<h1 style='color: blue'>Vue是最流行的框架之一</h1>"
+            }
+        })
+    </script>
+</body>
+</html>

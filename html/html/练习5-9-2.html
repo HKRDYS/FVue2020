@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<title>练习5-9-2</title>
+	<p style="text-align: center">三级联动下拉列表框</p>
+	<hr>
+</head>
+<body>
+	<div style="text-align: center;margin: 50px">
+		<a>大洲:</a>
+		<label for="province"></label>
+		<select id="province" onchange="change(this.value);">
+			<option>请选择大洲</option>
+		</select>&nbsp&nbsp&nbsp
+
+		<a>国家:</a>
+		<label for="city"></label>
+		<select id="city" onchange="countyChange(this.value);">
+			<option>请选择国家</option>
+		</select>&nbsp&nbsp&nbsp
+
+		<a>城市:</a>
+		<label for="county"></label>
+		<select id="county">
+			<option>请选择城市</option>
+		</select>
+	</div>
+
+	<script type="text/javascript">
+		const region = {
+			亚洲:
+					{
+						"中国": ["选择城市", "北京", "上海", "广州"],
+
+						"日本": ["选择城市", "东京", "大阪", "名古屋"],
+
+						"韩国": ["选择城市", "首尔", "仁川", "济州"]
+					},
+
+			欧洲:
+					{
+						"英国": ["选择城市", "伦敦", "曼切斯特", "利物浦"],
+
+						"德国": ["选择城市", "柏林", "慕尼黑", "法兰克福"],
+
+						"法国": ["选择城市", "巴黎", "里尔", "摩纳哥"]
+					},
+
+			美洲:
+					{
+						"美国": ["选择城市", "华盛顿", "纽约", "洛杉矶"],
+
+						"巴西": ["选择城市", "里约热内卢", "圣保罗", "巴西利亚"],
+
+						"阿根廷": ["选择城市", "布宜诺斯艾利斯", "萨尔多瓦", "罗萨里奥"]
+					},
+		};
+
+		const province = document.querySelector("#province");
+		const city = document.querySelector("#city");
+		const county = document.querySelector("#county");
+		let provinceName = null;
+
+		for (const ele in region){
+			//console.log(op);
+			province.options[province.length] = new Option(ele, ele, false, false);
+		}
+
+		const change = function (src) {
+			let op;
+			city.innerHTML = "";
+			if (src === '请选择大洲') {
+				op = new Option('请选择国家', '请选择国家', false, false);
+				city.options[0] = op;
+			} else {
+				for (const index in region[src]) {
+					//console.log(index);
+					op = new Option(index, index, false, false);
+					city.options[city.length] = op;
+				}
+			}
+			provinceName = src;
+			countyChange(city.value)
+		};
+
+		const countyChange = function(src2){
+			county.innerHTML = "";
+			if(src2 === '请选择国家'){
+				county.options[0] = new Option('请选择城市', '请选择城市', false, false);
+			}else{
+				for (const index in region[provinceName][src2]){
+					//console.log(index);
+					county.options[county.length] = new Option(region[provinceName][src2][index], region[provinceName][src2][index], false, false);
+				}
+			}
+		}
+	</script>
+</body>
+</html>

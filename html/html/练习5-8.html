@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习5-8</title>
+</head>
+<body>
+    <div id="app">
+        <div>{{pMsg}}</div>
+        <menu-item :pstr="pstr" :pnum="12" :pboo="true" :parr="parr" :pobj="pobj"></menu-item>
+    </div>
+    <script type="text/javascript" src="vue.js"></script>
+    <script type="text/javascript">
+        /*
+        * 父组件向子组件传值-props属性值类型
+        * */
+        Vue.component('menu-item',{
+            props:['pstr','pnum','pboo','parr','pobj'],
+            template : '<div>' +
+                '<div>{{pstr}}</div>' +
+                '<div>{{12+pnum}}</div>' +
+                '<div>{{typeof pboo}}</div>' +
+                '<ul>' +
+                '<li :key="index" v-for="(item,index) in parr">{{item}}</li>' +
+                '</ul>' +
+                '<span>{{pobj.name}}</span>' +
+                '<span>{{pobj.age}}</span>' +
+                '</div>'
+        });
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                pMsg: '父组件中内容',
+                pstr: 'hello',
+                parr: ['apple','orange','banana'],
+                pobj : {
+                    name : 'liSi',
+                    age : 12
+                }
+            }
+        });
+    </script>
+    </body>
+</html>

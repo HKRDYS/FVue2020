@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习3-21</title>
+    <style type="text/css">
+        .tab ul{
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+        }
+        .tab ul li {
+            box-sizing: border-box;
+            padding: 0;
+            float: left;
+            width: 100px;
+            height: 45px;
+            line-height: 45px;
+            list-style: none;
+            text-align: center;
+            border-top: 1px solid blue;
+            border-right: 1px solid blue;
+            cursor: none;
+        }
+        .tab ul li :first-child{
+            border-left: 1px solid blue;
+        }
+        .tab ul li.active {
+            background-color: orange;
+        }
+        .tab div{
+            width: 500px;
+            height: 300px;
+            display: none;
+            text-align: center;
+            font-size: 30px;
+            line-height: 300px;
+            border: 1px solid blue;
+            border-top: 0;
+        }
+        .tab div.current{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="tab">
+            <ul>
+<!--                <li class="active" :key="item.id" :class="{active:index === number}" @click="click(item.id,index)" v-for="(item,index) in exa">e2</li>-->
+<!--                <li :key="item.id" :class="{active:index === number}" @click="click(item.id,index)" v-for="(item,index) in exa">e1</li>-->
+<!--                <li :key="item.id" :class="{active:index === number}" @click="click(item.id,index)" v-for="(item,index) in exa">e2</li>-->
+                <li :key="item.id" :class="active:index === number}" @click="click(item.id,index)" v-for="(item,index) in exa">{{item.name}}</li>
+            </ul>
+<!--            <div  v-if="itemId === 1">-->
+<!--                <img src="e2.jpg" alt="">-->
+<!--            </div>-->
+<!--            <div v-else-if="itemId === 2">-->
+<!--                <img src="e1.png" alt="">-->
+<!--            </div>-->
+<!--            <div >-->
+<!--                <img src="e3.jpg" alt="">-->
+<!--            </div>-->
+
+        </div>
+
+        <div v-if="itemId== 1">
+            <img src="e1.png" alt="">
+        </div>
+        <div v-else-if="itemId== 2">
+            <img src="e2.jpg"  alt=""/>
+        </div>
+        <div v-else>
+            <img src="e3.jpg"  alt=""/>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="vue.js"></script>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el : "#app",
+            data:{
+                exa:[{
+                    id:1,
+                    name:'e1'
+                },{
+                    id:2,
+                    name:'e2'
+                },{
+                    id:3,
+                    name:'e3'
+                }],
+                itemId: 1,
+                number :0
+            },
+            methods:{
+                click:function (id,index) {
+                    this.itemId = id;
+                    this.number = index;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

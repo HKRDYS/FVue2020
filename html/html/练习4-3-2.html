@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习4-3-2</title>
+    <style type="text/css">
+        div{
+            border: 1px solid black;
+
+        }
+    </style>
+</head>
+    <body>
+        <div id="div1">
+            <p id="p1">已存在的文本段落</p>
+        </div>
+        <div style="margin-top: 30px;" id="div2">
+            <p id="p2">第一段文本段落</p>
+            <p id="p3">第三段文本段落</p>
+        </div>
+        <button type="button" onclick="add1()">动态创建文本段落</button>
+        <button type="button" onclick="add2()">动态添加文本段落</button>
+        <button type="button" onclick="add3()">动态插入文本段落</button>
+        <script type="text/javascript">
+            function add1(){
+                var odiv=document.createElement("div");
+                var textNode=document.createTextNode("动态创建的文本段落");
+                var body=document.getElementById("div1");
+                odiv.style.border="1px solid black";
+                odiv.style.marginBottom="30px";
+                body.insertBefore(odiv,body.firstChild);
+                odiv.appendChild(textNode);
+
+            }
+            function add2(){
+                var newEle=document.createElement("p")
+                var newText=document.createTextNode("这是动态添加的文本段落");
+                newEle.appendChild(newText);
+                var element=document.getElementById("div1");
+                element.appendChild(newEle);
+            }
+            function  add3(){
+                var newEle=document.createElement("p")
+                var newText=document.createTextNode("第二段文本段落");
+                var body=document.getElementById("p3");
+                body.insertBefore(newEle,body.firstChild);
+                newEle.appendChild(newText);
+            }
+        </script>
+    </body>
+</html>

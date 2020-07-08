@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习4-9</title>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <span>用户名:</span>
+            <span>
+                <label>
+                    <input type="text" v-model.lazy="uName">
+                </label>
+            </span>
+            <span>{{tip}}</span>
+        </div>
+    </div>
+    <script type="text/javascript" src="vue.js"></script>
+    <script type="text/javascript">
+        /*
+        * 侦听器
+        *1.采用侦听器监听用户名的变化
+        * 2.调用后台接口进行验证
+        * 3.根据验证的结果调整提示信息
+        * */
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                uName: '',
+                tip: '',
+            },
+            methods: {
+                checkName: function (uName) {
+                    //调用接口，但是可以使用定时任务的方式模拟接口调用
+                    const that = this;
+                    setTimeout(function () {
+                        //模拟接口调用
+                        if (uName === 'admin') {
+                            that.tip = '用户名已经存在，请更换一个';
+                        } else {
+                            that.tip = '用户名可以使用';
+                        }
+                    }, 2000);
+                }
+            },
+            watch: {
+                uName: function (val) {
+                    //调用后台接口验证用户名的合法性
+                    this.checkName(val);
+                    //修改提示信息
+                    this.tip = '正在验证……';
+
+                }
+            }
+        });
+    </script>
+</body>
+</html>

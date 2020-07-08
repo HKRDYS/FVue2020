@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习3-15-2</title>
+    <style>
+        .show{
+            background-color: dimgray;
+        }
+    </style>
+
+</head>
+<body>
+    <div style="text-align: center;">
+    <p>First name:
+        <label for="fName"></label>
+        <input type="text" id="fName" value="King" onfocus="changeCss()" onblur="show('fName')">
+    </p>
+    <p>Last name:
+        <label for="lName"></label>
+        <input type="text" id="lName" value="Wang" onfocus="changeCss()" onblur="show('lName')">
+    </p>
+    <button type="button" id="btn" onfocus="changeCss()" onblur="show('btn')">高亮显示焦点控件</button>
+    </div>
+
+    <script>
+    function changeCss(){
+        document.activeElement.className="show";
+    }
+    function show(id){
+        document.getElementById(id).className=" ";
+    }
+    </script>
+</body>
+</html>

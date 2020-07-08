@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<header>
+		<nav>练习3-11-2</nav>
+	</header>
+	<body>
+		<form action="" method="get">
+			
+		<p>First name:<label for="yname"></label><input type="text" id="yname" ></p>
+		<p>Last name:<label for="ename"></label><input type="text" id="ename" ></p>
+		
+		<p>请选择性别：
+			<label for="select"></label><select id="select">
+			<option value="请选择">请选择</option>
+		    <option value="男性">男性</option>
+		    <option value="女性">女性</option>
+		</select></p>
+		<p>Birth：<label for="date_info"></label><input type="datetime-local" id="date_info"></p>
+		<p>Email：<label for="Emid"></label><input type="email" id="Emid"></p>
+		<p>Hobby:</p>
+			<label>
+				<input type="checkbox" name="chek"/>
+			</label>Sport<br/>
+			<label>
+				<input type="checkbox" name="chek"/>
+			</label>Reading<br/>
+			<label>
+				<input type="checkbox" name="chek"/>
+			</label>Tour<br/>
+			<label>
+				<input type="checkbox" name="chek"/>
+			</label>Music<br/>
+			<label>
+				<input type="checkbox" name="chek"/>
+			</label>Movie<br/>
+			<label>
+				<input type="checkbox" name="chek"/>
+			</label>Dance<br/>
+		
+		<button type="button" onclick="btnSubmit()">提交</button>
+		</form>
+	
+	<script type="text/javascript">
+		function btnSubmit(){
+			document.getElementById('yname').value="king";
+			document.getElementById('ename').value="wang";
+			document.getElementById('select').selectedIndex = 1;
+			document.getElementById('date_info').value="2020" + "/" + "06" + "/" + "06";
+			document.getElementById('Emid').value="king@email.com";
+			const myCheck = document.getElementsByName("chek");
+			for(let i=0; i<myCheck.length; i++){
+				myCheck[i].checked=true;
+			}
+		}	
+	</script>
+	</body>
+</html>

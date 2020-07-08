@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>练习3-13-2</title>
+	</head>
+	<body>
+		<div>
+		<p>Hobby(复选框 checkbox)</p>
+		<input type="checkbox" name="chek"/>Sport<br/>
+		<input type="checkbox" name="chek"/>Reading<br/>
+		<input type="checkbox" name="chek"/>Tour<br/>
+		<input type="checkbox" name="chek"/>Music<br/>
+		<input type="checkbox" name="chek"/>Movie<br/>
+		<input type="checkbox" name="chek"/>Dance<br/>
+		<button type="button" onclick="allChoe()">全部选择</button>
+		<button type="button" onclick="allCancel()">全部取消</button>
+		<button type="button"onclick="btnSelect()">部分选择</button>
+		<button type="button" onclick="btnTFSelect()">判断是否被选中</button>
+		</div>
+	</body>
+	<script>
+		function allChoe(){
+			 var myCheck=document.getElementsByName("chek");
+			 for(var i=0;i<myCheck.length;i++){
+				myCheck[i].checked=true;
+			 }	
+		}
+		function allCancel(){
+			var myCheck=document.getElementsByName("chek");
+			for(var i=0;i<myCheck.length;i++){
+			myCheck[i].checked=false;
+			}	
+		}
+		function btnSelect(){
+			var myCheck = document.getElementsByName("chek");
+			for (var i = 0 ; i < myCheck.length ; i ++) {
+				if (i === 0 || i === 1|| i === 2 || i === 4) {
+					myCheck[i].checked = true;
+				}
+			}
+		}
+		
+		function btnTFSelect(){
+			var myCheck = document.getElementsByName("chek");
+			for (var i = 0 ; i < myCheck.length ; i ++) {
+				if (myCheck[i].checked === true) {
+					console.log(myCheck[i].nextSibling.nodeValue + "is checked!");
+				} else {
+					console.log(myCheck[i].nextSibling.nodeValue + "is not checked!");
+				}
+			}
+		}
+	</script>
+</html>

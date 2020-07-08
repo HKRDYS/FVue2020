@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>练习4-2-1</title>
+</head>
+<body>
+    <div id="app">
+        <label>
+            <select v-model="selected">
+               <option v-for="option in options" v-bind:value="option.value">
+                   {{option.text}}
+               </option>
+            </select>
+        </label><br>
+<!--        <li :key="item.id" v-for="(item,index) in result_list">-->
+<!--            <span>{{result}}</span>-->
+<!--        </li>-->
+        <p>选择结果：{{selected}}</p>
+    </div>
+    <script type="text/javascript" src="vue.js"></script>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el:'#app',
+            data : {
+                selected:'苹果',
+                options:[{
+                    text : 'One',
+                    value : '苹果'
+                }, {
+                    text : 'Two',
+                    value :'香蕉'
+                },{
+                    text : 'Three',
+                    value : '芒果'
+                }]
+
+            }
+        });
+    </script>
+</body>
+</html>

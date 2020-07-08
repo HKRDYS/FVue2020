@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>练习3-18-1</title>
+    <style>
+        #fontSize{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div id="fontSize">
+        value此时的值：{{valueTest}}
+    </div>
+    <div v-if = "valueTest >= 0.5">你现在可以看到我</div>
+    <div v-else>你现在看不到我</div>
+<!--    <div v-show = "flag">测试v-show</div>-->
+<!--    <button v-on:click="handle">点击</button>-->
+</div>
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+    //分支结构
+    //v-show的原理：控制元素样式是否显示display：none
+    var vm = new Vue({
+        el : "#app",
+        data : {
+            valueTest : Math.random(),
+            flag : false
+        },
+        methods : {
+            handle : function () {
+                this.flag = ! this.flag;
+            }
+        }
+    });
+</script>
+</body>
+</html>

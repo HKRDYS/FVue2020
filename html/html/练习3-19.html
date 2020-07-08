@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习3-19</title>
+</head>
+<body>
+    <div id="app">
+        <div>水果列表</div>
+        <ul>
+            <li v-for="item in fruits">{{item}}</li>
+            <li v-for="(item,index) in fruits">{{item + '---' + index}}</li>
+            <li :key="item.id" v-for="(item,index) in myFruits">
+                <span>{{item.eName}}</span>
+                <span>-----</span>
+                <span>{{item.cName}}</span>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="vue.js"></script>
+    <script type="text/javascript">
+        //循环结构-遍历数组
+        var vm = new Vue({
+           el : "#app",
+           data : {
+               fruits : ['apple','orange','banana'],
+               myFruits : [{
+                   id : 1,
+                   eName : 'apple',
+                   cName : '苹果'
+               }, {
+                       id : 2,
+                       eName : 'orange',
+                       cName :'橘子'
+                   },{
+                        id : 3,
+                       eName : 'banana',
+                       cName : '香蕉'
+                   }]
+           }
+        });
+    </script>
+</body>
+</html>

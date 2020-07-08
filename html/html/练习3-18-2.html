@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习3-18-2</title>
+    <style>
+        #app1{
+            width: 200px;
+            height: 200px;
+            padding: 5px 30px;
+            margin: 0 auto;
+            border: 4px solid #ebcbbe;
+
+        }
+        #app2{
+            text-align: center;
+            padding-top: 20px;
+            margin-left: 0;
+        }
+        span.title{
+            display: block;
+            width: 150px;
+            height: 30px;
+            position: relative;
+            top: -15px;
+            text-align: center;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div id="app1">
+            <span class="title">添加选项</span>
+            <form>
+                Value:<label>
+                <input type="text" value="music" id="input_v">
+            </label><br>
+                Text:<label>
+                <input type="text" value="Music" id="input_t">
+            </label>
+            </form>
+            <div style="position: relative;top: 10px; left: 90px">
+                <button type="submit" onclick="addOption()" >添加选项</button>
+            </div>
+
+        </div>
+        <div id="app2">
+            <label>
+                <strong>Hobby:</strong>
+                <select id="mySelect">
+                    <option value="请选择">请选择……</option>
+                    <option value="Sport">Sport</option>
+                    <option value="Reading">Reading</option>
+                    <option value="Tour">Tour</option>
+                </select>
+            </label>
+            <button type="button" value="移除选项" onclick="removeOption()">删除选项</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="vue.js"></script>
+    <script type="text/javascript">
+        function removeOption() {
+            var x = document.getElementById("mySelect");
+            x.remove(x.selectedIndex);
+        }
+        function addOption() {
+            var select = document.getElementById("mySelect");
+            var input_v = document.getElementById("input_v").value;
+            var input_t = document.getElementById("input_t").value;
+            select.options.add(new Option(input_t,input_v));
+        }
+
+    </script>
+</body>
+</html>

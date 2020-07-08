@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>练习4-6-1</title>
+</head>
+<body>
+    <div id="app">
+        <button type="button" value="a + 0" v-on:click="add1">a + 0</button>
+        <button type="button" value="b + 1" v-on:click="add2">b + 1</button>
+        <p>number + a = {{addA}}</p><br>
+        <p>number + b =  {{addB}}</p>
+    </div>
+
+    <script type="text/javascript" src="vue.js"></script>
+    <script>
+        const vm = new Vue ({
+           el : "#app",
+           data : {
+               a : 0,
+               b : 0,
+               number : 30
+           },
+            computed : {
+               addA : function () {
+                   console.log("number + a");
+                   return   this.number + this.a;
+
+               },
+                addB: function () {
+                   console.log("number + b");
+                    return   this.number + this.b;
+                }
+            },
+            methods:{
+                add1:function () {
+                    this.a += 0;
+                },
+                add2:function () {
+                    this.b += 1;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

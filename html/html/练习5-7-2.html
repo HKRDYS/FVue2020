@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习5-7-2</title>
+</head>
+<body>
+    <h3 >二级联动下拉列表框</h3>
+    <hr>
+    <form action="" method="post" name="form1">
+        <div id="continent">
+            <label>大洲：
+                <select name="sltContinent" onchange="selectCountry()">
+                    <option value="">请选择大洲</option>
+                    <option value="">亚洲</option>
+                    <option value="">欧洲</option>
+                    <option value="">美洲</option>
+                </select>
+            </label>
+        </div>
+        <div id="country">
+            <label>国家：
+                <select name="sltCountry">
+                    <option value="0">请选择国家</option>
+                </select>
+            </label>
+        </div>
+    </form>
+    </body>
+    <script type="text/javascript" >
+        const countryInfo = [["请选择国家", "中国", "日本", "韩国"],
+            ["请选择市区", "英国", "德国", "法国"],
+            ["请选择市区", "美国", "巴西", "阿根廷"]];
+        function selectCountry(){
+            const x = document.form1.sltContinent;
+            const y = document.form1.sltCountry;
+            const selectParam = countryInfo[x.selectedIndex - 1];
+            y.length = 1;
+            for(let i=0; i<selectParam.length; i++){
+                y[i] = new Option(selectParam[i],selectParam[i]);
+            }
+        }
+    </script>
+</html>

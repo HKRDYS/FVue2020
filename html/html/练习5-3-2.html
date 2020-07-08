@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习5-3-2</title>
+</head>
+<body>
+    <div style="text-align: center">
+        <h1>JavaScript 文本框特效 - 判断字符的个数</h1>
+        <hr>
+    </div>
+    <br>
+    <div style="text-align: center">
+        请输入：<label for="TextIpt"></label>
+        <input id="TextIpt" onblur="show()" type="text" />
+        <br><br>
+        输出：
+        <div id="divOut"></div>
+    </div>
+    <script type="text/javascript">
+        function show () {
+            let textsChineseLength;
+            const re = /[\u4E00-\u9FA5]/g;
+            const texts = document.getElementById("TextIpt").value;
+            const textsLength = texts.length;
+            if(re.test(texts)) {
+                textsChineseLength = texts.match(re).length;
+            }
+            if (textsChineseLength == null) {
+                textsChineseLength = 0;
+            }
+
+            const divs = document.getElementById("divOut");
+            divs.innerHTML = "共计" + textsLength +
+                "个字符，汉字字符为" + textsChineseLength +
+                "个，非汉字字符为" + (textsLength - textsChineseLength) +
+                "个";
+
+        }
+
+    </script>
+</body>
+</html>

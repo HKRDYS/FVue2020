@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的开心小农场</title>
+</head>
+
+<div id="app">
+<img id="test" src="">
+	<div id="bg">
+	    <span id="seed" onclick="seed()"></span>
+	    <span id="grow" onclick="grow()"></span>
+	    <span id="bloom" onclick="bloom()"></span>
+	    <span id="fruit" onclick="fruit()"></span>
+	</div>
+</div>
+<style type="text/css">
+    div{
+        font-size:12px;
+        padding:5px;
+    }
+    #bg{
+        width:456px;
+        height:266px;
+        background-image:url(images/plowland.jpg);
+    }
+    img{		
+        position:absolute;
+        top:85px;
+        left:195px;
+    }
+    #seed{	
+        background-image:url(images/btn_seed.png);
+        width:56px;
+        height:56px;
+        position:absolute;
+        top:229px;
+        left:49px;
+        cursor:hand;
+    }
+    #grow{		
+        background-image:url(images/btn_grow.png);
+        width:56px;
+        height:56px;
+        position:absolute;
+        top:229px;
+        left:154px;
+        cursor:hand;
+    }
+    #bloom{		
+        background-image:url(images/btn_bloom.png);
+        width:56px;
+        height:56px;
+        position:absolute;
+        top:229px;
+        left:259px;
+        cursor:hand;
+    }
+    #fruit{		
+        background-image:url(images/btn_fruit.png);
+        width:56px;
+        height:56px;
+        position:absolute;
+        top:229px;
+        left:368px;
+        cursor:hand;
+    }
+</style>
+<script type="text/javascript">
+	var test=document.getElementById('test');
+	
+		function seed(argument){
+			test.src="images/seed.png";
+		}
+		function grow(argument){
+			test.src="images/grow.png";
+		}
+		function bloom(argument){
+			test.src="images/bloom.png";
+		}
+		function fruit(argument){
+			test.src="images/fruit.png";
+		}
+		
+	
+</script>
+<body>
+
+
+	
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习4-5-2</title>
+    <style type="text/css">
+        div{
+            border: 1px solid black;
+
+        }
+    </style>
+</head>
+<body>
+
+    <div id="div1">
+        <p id="p1">动态创建的文本段落</p>
+    </div>
+    <div style="margin-top: 30px;" id="div2">
+        <p id="p2">已经存在的文本段落</p>
+        <p id="p3">动态追加（appendChild）的文本段落</p>
+    </div>
+    <div style="margin-top: 30px;" id="div3">
+        <p id="p4">第一段文本段落</p>
+        <p id="p5">动态插入（insertAfter）的文本段落</p>
+        <p id="p6">第三段文本段落</p>
+    </div>
+    <button type="button" onclick="delete1()">动态删除文本段落</button>
+    <button type="button" onclick="delete2()">动态删除（remove）文本段落</button>
+    <button type="button" onclick="delete3()">动态删除全部文本段落</button>
+    <script type="text/javascript">
+        function delete1(){
+
+            var deleteText1 = document.getElementById("div1");
+            // var getDiv = document.getElementsByTagName("div");
+            deleteText1.remove();
+
+
+        }
+        function delete2(){
+            var element=document.getElementById("div2");
+            var deleteText2 = document.getElementById('p3');
+            deleteText2.remove();
+
+        }
+        function  delete3(){
+            var deleteText3 = document.getElementById("div3")
+
+            for(var i = 6;i >  4 ;i--){
+                var getP = document.getElementById("p" + i);
+                deleteText3.removeChild(getP);
+            }
+
+
+
+
+        }
+    </script>
+</body>
+</html>

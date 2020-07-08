@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app1">
+        <my-com></my-com>
+    </div>
+    <div id="app2">
+        <my-com></my-com>
+    </div>
+    <template id="app2-com">
+        <h4>app2中注册的局部组件</h4>
+    </template>
+    <script type="text/javascript" src="vue.js"></script>
+    <script type="text/javascript">
+        const app1 = new Vue({
+            el: "#app1"
+        });
+        const app2 = new Vue({
+            el: "#app2",
+            components: {
+                'my-com': {
+                    template: '#app2-com'
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

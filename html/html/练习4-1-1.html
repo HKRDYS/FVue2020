@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习4-1-1</title>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <span>famous_name：</span>
+            <input type="checkbox" id="name1" value="马云" v-model="famous_name">
+            <label for="name1">马云</label>
+            <input type="checkbox" id="name2" value="马化腾" v-model="famous_name">
+            <label for="name2">马化腾</label>
+            <input type="checkbox" id="name3" value="马明哲" v-model="famous_name">
+            <label for="name3">马明哲</label><br>
+            <span>
+                哪些人做过首富：{{famous_name}}
+            </span>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="vue.js"></script>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el:'#app',
+            data : {
+                famous_name:[]
+            }
+        });
+    </script>
+</body>
+</html>

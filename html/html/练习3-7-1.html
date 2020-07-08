@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>练习3-7-1</title>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <label>
+                单击：
+                <button type="button" v-on:click="handle($event)">减少1岁</button>
+                <button type="button" v-on:click="handle1($event)">增加1岁</button>
+            </label>
+        </div>
+        <div>
+            <label>
+                马云的年龄：{{age}}
+            </label>
+        </div>
+        <div>
+            <label>
+                双击：
+                <button type="button" v-on:dblclick="dblclick($event)">减少10岁</button>
+                <button type="button" v-on:dblclick="dblclick1($event)">增加10岁</button>
+            </label>
+        </div>
+    </div>
+    <script src="vue.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el:"#app",
+            data:{
+                age:50
+            },
+            methods:{
+                handle:function (event) {
+                    this.age --;
+                },
+                handle1:function (event) {
+                    this.age ++;
+                },
+                dblclick:function (event) {
+                    this.age -= 10;
+                },
+                dblclick1:function (event) {
+                    this.age += 10;
+                }
+
+            }
+        })
+    </script>
+</body>
+</html>

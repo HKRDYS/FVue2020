@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习4-10-2</title>
+</head>
+<body>
+    <div style=" text-align:center;">
+        <h1>注册按钮倒计时效果</h1>
+        <hr style="width:100%;height:3px;background-color:#000;">
+        <form name="regForm" method="post" action="" style="line-height: 500px">
+            <input type="submit" value="注册 (剩余10秒)" disabled="disabled" id="reg_btn">
+            <input id="BtnClose" type="button" value=" 我不同意 " onclick="window.close();">
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        <!--
+        const wait_time = 10; //设置秒数(单位秒)
+        let secs_time = 0;
+        for(let i=1; i<=wait_time; i++)
+        {
+            window.setTimeout("sTimer("+i+")",i*1000);
+        }
+        function sTimer(num)
+        {
+            if(num===wait_time)
+            {
+                document.getElementById("reg_btn").value=" 同意注册 ";
+                document.getElementById("reg_btn").disabled=false;
+            }
+            else
+            {
+                secs_time=wait_time-num;
+                document.getElementById("reg_btn").value="注册 (剩余 "+secs_time+" 秒)";
+            }
+        }
+        //-->
+    </script>
+
+</body>
+</html>

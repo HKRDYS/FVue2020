@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习3-7-2</title>
+</head>
+<body>
+    <div >
+        <label>
+            First Name:<input type="text" id="fName" value="King">
+        </label>
+    </div>
+    <div>
+        <label>
+            Last Name:<input type="text" id="lName" value="Wang">
+        </label>
+    </div>
+    <div>
+        <button type="button" onclick="init1()">动态设置firstName焦点</button>
+        <button type="button" onclick="init2()">动态设置lastName焦点</button>
+    </div>
+    <script type="text/javascript">
+        function init1() {
+            const ctrl = document.getElementById("fName");
+            ctrl.focus();
+
+        }
+        function init2() {
+            const ctrl1 = document.getElementById("lName");
+            ctrl1.focus();
+
+        }
+    </script>
+</body>
+</html>

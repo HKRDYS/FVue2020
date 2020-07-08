@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习3-19-1</title>
+</head>
+<body>
+<div id="app">
+    <div>
+        <h1><strong>评选出今年最火的几个人：</strong></h1>
+    </div>
+    <ul>
+        <li v-for="(index,item) in names">{{item + '-' + index}}</li>
+
+    </ul>
+</div>
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+    //循环结构-遍历数组
+    var vm = new Vue({
+        el : "#app",
+        data : {
+            names : ['马云','马化腾','蔡徐坤','刘强东'],
+            myNames : [{
+                id : 0,
+                eName : '马云'
+
+            },
+                {
+                    id : 1,
+                    eName : '马化腾'
+                },{
+                    id : 2,
+                    eName : '蔡徐坤'
+                },{
+                    id : 3,
+                    eName : '刘强东'
+                }]
+        }
+    });
+</script>
+</body>
+</html>

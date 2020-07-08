@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习3-20-1</title>
+</head>
+<body>
+<div id="app">
+    <div>
+        <h1>没有报道的学生名单：</h1>
+        <li v-if="item.state === false" :key="item.id" v-for="(item) in obj">
+            <span style="padding-left: 20px">{{item.uName}}</span>
+        </li>
+    </div>
+
+<!--    <div v-if="obj.state === false" v-for="(index,item) in obj ":key="item.uName">没有报道的学生名单：<br>{{item.uName}}</div>-->
+</div>
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+
+    //循环结构
+    var vm = new Vue ({
+        el : '#app',
+        data : {
+
+            obj : [{
+                id:1,
+                uName : '小明',
+                state : false
+            }, {
+                id:2,
+                uName : '小红',
+                state : true
+            }, {
+                id:3,
+                uName : '小华',
+                state : true
+
+            }, {
+                id:4,
+                uName : '小思',
+                state : false
+
+            }]
+        }
+    });
+</script>
+</body>
+</html>

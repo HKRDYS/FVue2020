@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+    <script>
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "文本已修改";
+            var select_value = document.getElementById("id-sel-gender");
+            var len = document.getElementById("id-sel-gender").options.length;
+            // select_value.innerHTML = "";
+            for (var i = 0 ;i<len;i++){
+                document.getElementById("id-sel-gender").options[i].innerText = document.getElementById("id-sel-gender").options[i].value;
+            }
+
+
+
+        }
+
+
+    </script>
+</head>
+<body>
+    <div style="width: 100%;text-align: center">
+        <form >
+            First name: <label>
+            <input type="text" name="firstname">
+        </label><br>
+            Last name: <label>
+            <input type="text" name="lastname">
+        </label>
+        </form>
+    </div>
+    <div style="width: 100%;text-align: center">
+        <label for="id-sel-gender"></label>
+        <select id="id-sel-gender">
+            <option value="0">请选择...</option>
+            <option value="1">男</option>
+            <option value="2">女</option>
+        </select>
+    </div>
+    <div style="width: 100%;text-align: center">
+        <button id="demo" type="button" onclick="myFunction()">
+            修改控件文本
+        </button>
+    </div>
+
+
+
+
+</body>
+</html>

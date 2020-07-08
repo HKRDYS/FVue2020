@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习5-4</title>
+</head>
+<body>
+    <div id="app">
+        <hello-world></hello-world>
+        <hello-tom></hello-tom>
+        <hello-jerry></hello-jerry>
+        <test-com></test-com>
+    </div>
+    <script type="text/javascript" src="vue.js"></script>
+    <script type="text/javascript">
+        /*
+        * 局部组件注册
+        * 局部组件只能在注册它的父组件中使用
+        * */
+        Vue.component('test-com',{
+            template : '<div>Test<hello-world></hello-world></div>'
+        });
+        const HelloWorld = {
+            data: function () {
+                return{
+                    msg : 'HelloWorld'
+                }
+            },
+            template: '<div>{{msg}}</div>'
+        };
+        const HelloTom = {
+            data : function () {
+                return {
+                    msg : "HelloTom"
+                }
+            },
+            template : "<div>{{msg}}</div>"
+        };
+        const HelloJerry = {
+            data : function () {
+                return {
+                    msg : "HelloJerry"
+                }
+            },
+            template : "<div>{{msg}}</div>"
+        };
+        const vm = new Vue({
+            el : "#app",
+            data : {
+
+            },
+            components : {
+                'hello-world' : HelloWorld,
+                'hello-tom' : HelloTom,
+                'hello-jerry' : HelloJerry,
+            }
+        });
+    </script>
+</body>
+</html>
